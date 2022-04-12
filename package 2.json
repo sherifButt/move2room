@@ -7,23 +7,13 @@
       "build": "next build",
       "start": "next start",
       "storybook": "start-storybook -p 6006",
-      "storybook:build": "build-storybook",
-      "cypress": "cypress open",
-      "cypress:headless": "cypress run",
-      "e2e": "start-server-and-test start http://localhost:3000 cypress",
-      "e2e:headless": "start-server-and-test start http://localhost:3000 cypress:headless"
+      "storybook:build": "build-storybook"
    },
    "dependencies": {
-      "@redux-devtools/extension": "^3.2.2",
       "next": "12.1.0",
       "next-connect": "^0.12.2",
-      "next-redux-wrapper": "^7.0.5",
       "react": "17.0.2",
-      "react-dom": "17.0.2",
-      "react-redux": "^7.2.8",
-      "redux": "^4.1.2",
-      "redux-devtools-extension": "^2.13.9",
-      "redux-thunk": "^2.4.1"
+      "react-dom": "17.0.2"
    },
    "devDependencies": {
       "@babel/core": "^7.17.8",
@@ -37,7 +27,6 @@
       "@storybook/testing-library": "^0.0.9",
       "autoprefixer": "^10.4.4",
       "babel-loader": "^8.2.4",
-      "cypress": "^9.5.4",
       "postcss": "^8.4.12",
       "postcss-flexbugs-fixes": "^5.0.2",
       "postcss-preset-env": "^7.4.3",
