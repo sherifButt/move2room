@@ -3,7 +3,7 @@ export default class APIFeatures {
       this.query = query
       this.queryString = queryString
    }
-// search by location query in an address
+   // search by location query in an address
    search() {
       const location = this.queryString.location
          ? {
@@ -22,18 +22,19 @@ export default class APIFeatures {
       // create copy of the query string
       const queryStringCopy = this.queryString
       // delete location from queryString
-      const removeFields = ['location']
+      const removeFields = ['location','page']
       removeFields.map(el => delete queryStringCopy[el])
-      
 
       this.query = this.query.find(queryStringCopy)
 
       return this
    }
-    
-    pagination ( resPerPage ) {
-        const currentPage = Number( this.queryString.page ) || 1
-        
-        return this
-    }
+
+   pagination(resPerPage) {
+      const currentPage = Number(this.queryString.page) || 1
+      const skip = resPerPage * (currentPage - 1)
+      this.query = this.query.limit(resPerPage).skip(skip)
+
+      return this
+   }
 }
